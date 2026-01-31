@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Survey & Poll</title>
+
+<style>
+body {
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 70%;
+  margin: auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-family: Algerian;
+  color: #6a0572;
+}
+
+h2 {
+  color: #4a148c;
+  border-left: 6px solid #ce93d8;
+  padding-left: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 60%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #6a0572;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="reset"] {
+  background-color: #b71c1c;
+}
+
+input[type="submit"]:hover {
+  background-color: #4a148c;
+}
+
+input[type="reset"]:hover {
+  background-color: #7f0000;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #6a0572;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer h3 {
+  color: #4a148c;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Online Survey & Polling Website</h1>
+  </div>
+
+  <hr>
+  <u><p>Please fill out the survey below.</p></u>
+  <hr>
+
+  <h2>Personal Information</h2>
+  <label>Full Name:</label><br><br>
+  <input type="text" placeholder="Full Name"><br><br>
+
+  <label>Email:</label><br><br>
+  <input type="email" placeholder="Email"><br><br>
+
+  <label>Age:</label><br><br>
+  <input type="number" placeholder="Age"><br><br>
+
+  <h2>Polling Question</h2>
+  <p>Which technology do you like the most?</p>
+  <input type="radio" name="tech"> Artificial Intelligence<br>
+  <input type="radio" name="tech"> Web Development<br>
+  <input type="radio" name="tech"> Data Science<br><br>
+
+  <h2>Skills You Want to Learn</h2>
+  <input type="checkbox"> HTML<br>
+  <input type="checkbox"> CSS<br>
+  <input type="checkbox"> JavaScript<br>
+  <input type="checkbox"> Python<br><br>
+
+  <h2>Education</h2>
+  <label>Select your course:</label><br><br>
+  <select>
+    <option>B.Tech</option>
+    <option>BE</option>
+    <option>B.Arch</option>
+    <option>MBA</option>
+  </select><br><br>
+
+  <h2>Feedback</h2>
+  <textarea rows="5" cols="40" placeholder="Write your feedback here"></textarea><br><br>
+
+  <input type="submit" value="Submit Survey">
+  <input type="reset" value="Reset">
+
+  <hr>
+
+  <h2>Survey Instructions</h2>
+  <table border="1">
+    <tr>
+      <th>Rule</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Fill all required fields</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Select only one poll option</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Submit before leaving</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <footer>
+    <p>© 2026 Online Survey Website</p>
+    <i><h3>Designed By,<br><br><font face ="Brush Script MT" size="11">HARISHMA R G</font></h3></i>
+    <a href="#">Back to Top</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
