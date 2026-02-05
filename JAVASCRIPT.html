@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign In / Sign Up</title>
+
+<style>
+body {
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 360px;
+  margin: 80px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h2 {
+  color: #6a0572;
+}
+
+.input-box {
+  position: relative;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.eye {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #6a0572;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #4a148c;
+}
+
+.toggle {
+  margin-top: 15px;
+  color: #4a148c;
+  cursor: pointer;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <form id="loginForm">
+    <h2>Sign In</h2>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+
+    <div class="input-box">
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <span class="eye" onclick="togglePassword('loginPassword')">👁️</span>
+    </div>
+
+    <button type="submit">Login</button>
+    <p class="toggle" onclick="showSignup()">New user? Sign Up</p>
+  </form>
+
+  <form id="signupForm" style="display:none;">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupName" placeholder="Full Name" required>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+
+    <div class="input-box">
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <span class="eye" onclick="togglePassword('signupPassword')">👁️</span>
+    </div>
+
+    <button type="submit">Register</button>
+    <p class="toggle" onclick="showLogin()">Already have an account?</p>
+  </form>
+
+</div>
+
+<script>
+function showSignup() {
+  loginForm.style.display = "none";
+  signupForm.style.display = "block";
+}
+
+function showLogin() {
+  signupForm.style.display = "none";
+  loginForm.style.display = "block";
+}
+
+function togglePassword(id) {
+  let pass = document.getElementById(id);
+  pass.type = pass.type === "password" ? "text" : "password";
+}
+
+signupForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let email = signupEmail.value;
+  let password = signupPassword.value;
+
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+
+  alert("Signup Successful! Please Login.");
+  showLogin();
+});
+
+loginForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (
+    loginEmail.value === localStorage.getItem("email") &&
+    loginPassword.value === localStorage.getItem("password")
+  ) {
+    alert("Login Successful!");
+    window.location.href = "css.html"; 
+  } else {
+    alert("Invalid Email or Password");
+  }
+});
+</script>
+
+</body>
+</html>
